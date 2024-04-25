@@ -6,8 +6,6 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDSV_TC.views
@@ -15,11 +13,10 @@ namespace QLDSV_TC.views
     public partial class formLogin : Form
     {
         public formLogin()
-        {
+        {  
             InitializeComponent();
         }
         private SqlConnection conn_publisher = new SqlConnection();
-        String loginNameSV = "";
         private void LayDSPM(String cmd)
         {
             DataTable dt = new DataTable();
@@ -33,6 +30,7 @@ namespace QLDSV_TC.views
             comBoxPhongBan.DataSource = Program.bdsDSPM;
             comBoxPhongBan.DisplayMember = "TENCN";
             comBoxPhongBan.ValueMember = "TENSERVER";
+            comBoxPhongBan.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private int KetNoi_CSDLGoc()
         {
@@ -55,6 +53,14 @@ namespace QLDSV_TC.views
             try
             {
                 Program.servername = comBoxPhongBan.SelectedValue.ToString();
+                if (comBoxPhongBan.SelectedIndex == 2)
+                {
+                    checkIsSV.Visible = false;
+                }
+                else
+                {
+                    checkIsSV.Visible = true;
+                }
             }
             catch (Exception) { }
         }
@@ -76,6 +82,7 @@ namespace QLDSV_TC.views
                 Program.pass = Program.passDefaultSV;
                 txtBMatKhau.Text = Program.pass;
                 label3.Visible = false;
+                Program.bdsDSPM.Filter = "TENCN not LIKE 'Kế Toán%'  ";
             }
             else
             {
@@ -83,6 +90,7 @@ namespace QLDSV_TC.views
                 hienMatKhau.Visible = true;
                 label3.Visible = true;
                 txtBMatKhau.Text = null;
+                Program.bdsDSPM.Filter = "";
             }
         }
 
@@ -93,7 +101,6 @@ namespace QLDSV_TC.views
                 MessageBox.Show("Tài khoản và mật khẩu không được để trống", "", MessageBoxButtons.OK);
                 return;
             }
-
             Program.mlogin = checkIsSV.Checked ? Program.mloginDefaultSV : txtBTaiKhoan.Text; //Login để vào server lần đầu tiên
             Program.pass = txtBMatKhau.Text;
 
@@ -132,13 +139,11 @@ namespace QLDSV_TC.views
                 Program.mHoten = Program.myReader.GetString(1); // Dang nhap sai ho ten bang null -> exception = khong ton tai sinh vien o phan manh
                 Program.mGroup = Program.myReader.GetString(2);
                 Program.myReader.Close();
-                Program.frmChinh = new formMain();
                 Program.frmChinh.statusMa.Text = "MÃ: " + Program.username.ToUpper();
                 Program.frmChinh.statusTen.Text = "TÊN: " + Program.mHoten;
-                Program.frmChinh.statusNhom.Text = "QUYỀN: " + Program.mGroup;
-                //this.Visible = false;
-                Thread.Sleep(500);
-                Program.frmChinh.Show();
+                Program.frmChinh.statusNhom.Text = "QUYỀN: " + Program.mGroup; 
+                this.Visible = false;
+                Program.frmChinh.afterLogin();
             }
             catch (Exception ex)
             {
@@ -164,14 +169,14 @@ namespace QLDSV_TC.views
             Program.servername = comBoxPhongBan.SelectedValue.ToString();
             txtBMatKhau.Properties.UseSystemPasswordChar = true;
         }
-        /*public void loadAgain()
+        public void loadAgain()
         {
             comBoxPhongBan.SelectedItem = Program.mGroup;
             Program.servername = comBoxPhongBan.SelectedValue.ToString();
             txtBTaiKhoan.Text = null;
             txtBMatKhau.Text = null;
             txtBTaiKhoan.Focus();
-
-        }*/
+            this.Visible = true;
+        }
     }
 }

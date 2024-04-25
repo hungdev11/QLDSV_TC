@@ -33,14 +33,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v23.2" />
+    <Reference Include="DevExpress.Charts.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v23.2" />
     <Reference Include="DevExpress.Data.v23.2" />
+    <Reference Include="DevExpress.DataAccess.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v23.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v23.2.Export, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v23.2" />
+    <Reference Include="DevExpress.Utils.v23.2.UI, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v23.2" />
     <Reference Include="DevExpress.Sparkline.v23.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v23.2" />
     <Reference Include="DevExpress.Drawing.v23.2" />
+    <Reference Include="DevExpress.XtraGauges.v23.2.Core, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v23.2.Extensions, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +70,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_HP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_HP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_SV.cs">
+      <DependentUpon>DS_SV.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS_SV.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +91,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reports\reportDSLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\reportDSLTC.Designer.cs">
+      <DependentUpon>reportDSLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formDKLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formDKLTC.Designer.cs">
+      <DependentUpon>formDKLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formHocPhi.Designer.cs">
+      <DependentUpon>formHocPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +139,18 @@
     <Compile Include="views\formNhapDiem.Designer.cs">
       <DependentUpon>formNhapDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\formTaoTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formTaoTK.Designer.cs">
+      <DependentUpon>formTaoTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formXemDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formXemDiem.Designer.cs">
+      <DependentUpon>formXemDiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="formMain.resx">
       <DependentUpon>formMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +164,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reports\reportDSLTC.resx">
+      <DependentUpon>reportDSLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formDKLTC.resx">
+      <DependentUpon>formDKLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formHocPhi.resx">
+      <DependentUpon>formHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,7 +188,24 @@
     <EmbeddedResource Include="views\formNhapDiem.resx">
       <DependentUpon>formNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\formTaoTK.resx">
+      <DependentUpon>formTaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formXemDiem.resx">
+      <DependentUpon>formXemDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="DS_HP.xsc">
+      <DependentUpon>DS_HP.xsd</DependentUpon>
+    </None>
+    <None Include="DS_HP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_HP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_HP.xss">
+      <DependentUpon>DS_HP.xsd</DependentUpon>
+    </None>
     <None Include="DS_SV.xsc">
       <DependentUpon>DS_SV.xsd</DependentUpon>
     </None>
@@ -146,6 +227,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

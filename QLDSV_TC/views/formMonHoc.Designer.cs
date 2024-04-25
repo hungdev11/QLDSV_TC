@@ -30,6 +30,10 @@ namespace QLDSV_TC.views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label mAMHLabel;
+            System.Windows.Forms.Label sOTIET_THLabel;
+            System.Windows.Forms.Label sOTIET_LTLabel;
+            System.Windows.Forms.Label tENMHLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMonHoc));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -43,36 +47,73 @@ namespace QLDSV_TC.views
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.txtTTH = new DevExpress.XtraEditors.TextEdit();
-            this.txtTLT = new DevExpress.XtraEditors.TextEdit();
-            this.txtTenMH = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dS_SV = new QLDSV_TC.DS_SV();
             this.bdsMonHoc = new System.Windows.Forms.BindingSource(this.components);
             this.mONHOCTableAdapter = new QLDSV_TC.DS_SVTableAdapters.MONHOCTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.DS_SVTableAdapters.TableAdapterManager();
-            this.gvMonHoc = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gcMH = new DevExpress.XtraGrid.GridControl();
+            this.gvMH = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.infoMH = new System.Windows.Forms.GroupBox();
+            this.txtTenMH = new System.Windows.Forms.TextBox();
+            this.soTietLT = new DevExpress.XtraEditors.SpinEdit();
+            this.soTietTH = new DevExpress.XtraEditors.SpinEdit();
+            this.txtMaMH = new System.Windows.Forms.TextBox();
+            this.bdsLTC = new System.Windows.Forms.BindingSource(this.components);
+            this.lOPTINCHITableAdapter = new QLDSV_TC.DS_SVTableAdapters.LOPTINCHITableAdapter();
+            mAMHLabel = new System.Windows.Forms.Label();
+            sOTIET_THLabel = new System.Windows.Forms.Label();
+            sOTIET_LTLabel = new System.Windows.Forms.Label();
+            tENMHLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTTH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTLT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMonHoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMH)).BeginInit();
+            this.infoMH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soTietLT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soTietTH.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLTC)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Location = new System.Drawing.Point(239, 100);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(115, 33);
+            mAMHLabel.TabIndex = 0;
+            mAMHLabel.Text = "MAMH:";
+            // 
+            // sOTIET_THLabel
+            // 
+            sOTIET_THLabel.AutoSize = true;
+            sOTIET_THLabel.Location = new System.Drawing.Point(860, 217);
+            sOTIET_THLabel.Name = "sOTIET_THLabel";
+            sOTIET_THLabel.Size = new System.Drawing.Size(166, 33);
+            sOTIET_THLabel.TabIndex = 2;
+            sOTIET_THLabel.Text = "SOTIET TH:";
+            // 
+            // sOTIET_LTLabel
+            // 
+            sOTIET_LTLabel.AutoSize = true;
+            sOTIET_LTLabel.Location = new System.Drawing.Point(238, 217);
+            sOTIET_LTLabel.Name = "sOTIET_LTLabel";
+            sOTIET_LTLabel.Size = new System.Drawing.Size(160, 33);
+            sOTIET_LTLabel.TabIndex = 4;
+            sOTIET_LTLabel.Text = "SOTIET LT:";
+            // 
+            // tENMHLabel
+            // 
+            tENMHLabel.AutoSize = true;
+            tENMHLabel.Location = new System.Drawing.Point(860, 100);
+            tENMHLabel.Name = "tENMHLabel";
+            tENMHLabel.Size = new System.Drawing.Size(126, 33);
+            tENMHLabel.TabIndex = 6;
+            tENMHLabel.Text = "TENMH:";
             // 
             // barManager1
             // 
@@ -115,6 +156,7 @@ namespace QLDSV_TC.views
             this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnXoa
             // 
@@ -124,6 +166,7 @@ namespace QLDSV_TC.views
             this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnSua
             // 
@@ -143,6 +186,7 @@ namespace QLDSV_TC.views
             this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
             this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnGhi
             // 
@@ -152,6 +196,7 @@ namespace QLDSV_TC.views
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
             this.btnGhi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnThoat
             // 
@@ -161,6 +206,7 @@ namespace QLDSV_TC.views
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -194,105 +240,6 @@ namespace QLDSV_TC.views
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 801);
             // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.txtTTH);
-            this.panelControl1.Controls.Add(this.txtTLT);
-            this.panelControl1.Controls.Add(this.txtTenMH);
-            this.panelControl1.Controls.Add(this.txtMaMH);
-            this.panelControl1.Controls.Add(this.label5);
-            this.panelControl1.Controls.Add(this.label4);
-            this.panelControl1.Controls.Add(this.label3);
-            this.panelControl1.Controls.Add(this.label2);
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 510);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1535, 337);
-            this.panelControl1.TabIndex = 5;
-            // 
-            // txtTTH
-            // 
-            this.txtTTH.Location = new System.Drawing.Point(1109, 179);
-            this.txtTTH.MenuManager = this.barManager1;
-            this.txtTTH.Name = "txtTTH";
-            this.txtTTH.Size = new System.Drawing.Size(234, 40);
-            this.txtTTH.TabIndex = 8;
-            // 
-            // txtTLT
-            // 
-            this.txtTLT.Location = new System.Drawing.Point(514, 179);
-            this.txtTLT.MenuManager = this.barManager1;
-            this.txtTLT.Name = "txtTLT";
-            this.txtTLT.Size = new System.Drawing.Size(200, 40);
-            this.txtTLT.TabIndex = 7;
-            // 
-            // txtTenMH
-            // 
-            this.txtTenMH.Location = new System.Drawing.Point(1020, 90);
-            this.txtTenMH.MenuManager = this.barManager1;
-            this.txtTenMH.Name = "txtTenMH";
-            this.txtTenMH.Size = new System.Drawing.Size(323, 40);
-            this.txtTenMH.TabIndex = 6;
-            // 
-            // txtMaMH
-            // 
-            this.txtMaMH.Location = new System.Drawing.Point(514, 95);
-            this.txtMaMH.MenuManager = this.barManager1;
-            this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Size = new System.Drawing.Size(200, 40);
-            this.txtMaMH.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(801, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(230, 33);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Số Tiết Thực Hành";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(267, 186);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 33);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Số Tiết Lý Thuyết";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(801, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 33);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên Môn Học";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(267, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Mã Môn Học";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 42);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THÔNG TIN MÔN HỌC";
-            // 
             // dS_SV
             // 
             this.dS_SV.DataSetName = "DS_SV";
@@ -319,72 +266,153 @@ namespace QLDSV_TC.views
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.DS_SVTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // gvMonHoc
+            // gcMH
             // 
-            this.gvMonHoc.AllowUserToAddRows = false;
-            this.gvMonHoc.AllowUserToDeleteRows = false;
-            this.gvMonHoc.AllowUserToOrderColumns = true;
-            this.gvMonHoc.AutoGenerateColumns = false;
-            this.gvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.gvMonHoc.DataSource = this.bdsMonHoc;
-            this.gvMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvMonHoc.Location = new System.Drawing.Point(0, 46);
-            this.gvMonHoc.Name = "gvMonHoc";
-            this.gvMonHoc.ReadOnly = true;
-            this.gvMonHoc.RowHeadersWidth = 82;
-            this.gvMonHoc.RowTemplate.Height = 33;
-            this.gvMonHoc.Size = new System.Drawing.Size(1535, 464);
-            this.gvMonHoc.TabIndex = 6;
-            this.gvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mONHOCDataGridView_CellClick);
+            this.gcMH.DataSource = this.bdsMonHoc;
+            this.gcMH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcMH.Location = new System.Drawing.Point(0, 46);
+            this.gcMH.MainView = this.gvMH;
+            this.gcMH.MenuManager = this.barManager1;
+            this.gcMH.Name = "gcMH";
+            this.gcMH.Size = new System.Drawing.Size(1535, 517);
+            this.gcMH.TabIndex = 11;
+            this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvMH});
             // 
-            // dataGridViewTextBoxColumn4
+            // gvMH
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SOTIET_TH";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Số Tiết Thực Hành";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.gvMH.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAMH,
+            this.colTENMH,
+            this.colSOTIET_LT,
+            this.colSOTIET_TH});
+            this.gvMH.GridControl = this.gcMH;
+            this.gvMH.Name = "gvMH";
+            this.gvMH.OptionsBehavior.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // colMAMH
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SOTIET_LT";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Số Tiết Lý Thuyết";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.colMAMH.Caption = "Mã Môn Học";
+            this.colMAMH.FieldName = "MAMH";
+            this.colMAMH.MinWidth = 40;
+            this.colMAMH.Name = "colMAMH";
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 0;
+            this.colMAMH.Width = 150;
             // 
-            // dataGridViewTextBoxColumn2
+            // colTENMH
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TENMH";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Môn Học";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.colTENMH.Caption = "Tên Môn Học";
+            this.colTENMH.FieldName = "TENMH";
+            this.colTENMH.MinWidth = 40;
+            this.colTENMH.Name = "colTENMH";
+            this.colTENMH.Visible = true;
+            this.colTENMH.VisibleIndex = 1;
+            this.colTENMH.Width = 150;
             // 
-            // dataGridViewTextBoxColumn1
+            // colSOTIET_LT
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MAMH";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Môn Học";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.colSOTIET_LT.Caption = "Số Tiết Lý Thuyết";
+            this.colSOTIET_LT.FieldName = "SOTIET_LT";
+            this.colSOTIET_LT.MinWidth = 40;
+            this.colSOTIET_LT.Name = "colSOTIET_LT";
+            this.colSOTIET_LT.Visible = true;
+            this.colSOTIET_LT.VisibleIndex = 2;
+            this.colSOTIET_LT.Width = 150;
+            // 
+            // colSOTIET_TH
+            // 
+            this.colSOTIET_TH.Caption = "Số Tiết Thực Hành";
+            this.colSOTIET_TH.FieldName = "SOTIET_TH";
+            this.colSOTIET_TH.MinWidth = 40;
+            this.colSOTIET_TH.Name = "colSOTIET_TH";
+            this.colSOTIET_TH.Visible = true;
+            this.colSOTIET_TH.VisibleIndex = 3;
+            this.colSOTIET_TH.Width = 150;
+            // 
+            // infoMH
+            // 
+            this.infoMH.Controls.Add(tENMHLabel);
+            this.infoMH.Controls.Add(this.txtTenMH);
+            this.infoMH.Controls.Add(sOTIET_LTLabel);
+            this.infoMH.Controls.Add(this.soTietLT);
+            this.infoMH.Controls.Add(sOTIET_THLabel);
+            this.infoMH.Controls.Add(this.soTietTH);
+            this.infoMH.Controls.Add(mAMHLabel);
+            this.infoMH.Controls.Add(this.txtMaMH);
+            this.infoMH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.infoMH.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoMH.Location = new System.Drawing.Point(0, 563);
+            this.infoMH.Name = "infoMH";
+            this.infoMH.Size = new System.Drawing.Size(1535, 284);
+            this.infoMH.TabIndex = 12;
+            this.infoMH.TabStop = false;
+            this.infoMH.Text = "THÔNG TIN MÔN HỌC";
+            // 
+            // txtTenMH
+            // 
+            this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMonHoc, "TENMH", true));
+            this.txtTenMH.Location = new System.Drawing.Point(992, 92);
+            this.txtTenMH.Name = "txtTenMH";
+            this.txtTenMH.Size = new System.Drawing.Size(458, 41);
+            this.txtTenMH.TabIndex = 7;
+            // 
+            // soTietLT
+            // 
+            this.soTietLT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMonHoc, "SOTIET_LT", true));
+            this.soTietLT.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.soTietLT.Location = new System.Drawing.Point(415, 212);
+            this.soTietLT.MenuManager = this.barManager1;
+            this.soTietLT.Name = "soTietLT";
+            this.soTietLT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soTietLT.Size = new System.Drawing.Size(200, 40);
+            this.soTietLT.TabIndex = 5;
+            // 
+            // soTietTH
+            // 
+            this.soTietTH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMonHoc, "SOTIET_TH", true));
+            this.soTietTH.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.soTietTH.Location = new System.Drawing.Point(1042, 215);
+            this.soTietTH.MenuManager = this.barManager1;
+            this.soTietTH.Name = "soTietTH";
+            this.soTietTH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.soTietTH.Size = new System.Drawing.Size(200, 40);
+            this.soTietTH.TabIndex = 3;
+            // 
+            // txtMaMH
+            // 
+            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsMonHoc, "MAMH", true));
+            this.txtMaMH.Location = new System.Drawing.Point(415, 92);
+            this.txtMaMH.Name = "txtMaMH";
+            this.txtMaMH.Size = new System.Drawing.Size(183, 41);
+            this.txtMaMH.TabIndex = 1;
+            // 
+            // bdsLTC
+            // 
+            this.bdsLTC.DataMember = "FK_LOPTINCHI_MONHOC";
+            this.bdsLTC.DataSource = this.bdsMonHoc;
+            // 
+            // lOPTINCHITableAdapter
+            // 
+            this.lOPTINCHITableAdapter.ClearBeforeFill = true;
             // 
             // formMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1535, 847);
-            this.Controls.Add(this.gvMonHoc);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.infoMH);
+            this.Controls.Add(this.gcMH);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -394,16 +422,15 @@ namespace QLDSV_TC.views
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTTH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTLT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_SV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMonHoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMonHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcMH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvMH)).EndInit();
+            this.infoMH.ResumeLayout(false);
+            this.infoMH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.soTietLT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soTietTH.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLTC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,24 +450,22 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarButtonItem btnPhucHoi;
         private DevExpress.XtraBars.BarButtonItem btnGhi;
         private DevExpress.XtraBars.BarButtonItem btnThoat;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit txtTTH;
-        private DevExpress.XtraEditors.TextEdit txtTLT;
-        private DevExpress.XtraEditors.TextEdit txtTenMH;
-        private DevExpress.XtraEditors.TextEdit txtMaMH;
         private System.Windows.Forms.BindingSource bdsMonHoc;
         private DS_SV dS_SV;
         private DS_SVTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private DS_SVTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView gvMonHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.GroupBox infoMH;
+        private DevExpress.XtraGrid.GridControl gcMH;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
+        private System.Windows.Forms.TextBox txtTenMH;
+        private DevExpress.XtraEditors.SpinEdit soTietLT;
+        private DevExpress.XtraEditors.SpinEdit soTietTH;
+        private System.Windows.Forms.TextBox txtMaMH;
+        private System.Windows.Forms.BindingSource bdsLTC;
+        private DS_SVTableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
     }
 }

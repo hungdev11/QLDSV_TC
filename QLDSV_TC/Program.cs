@@ -43,7 +43,11 @@ namespace QLDSV_TC
         public static views.formLop frmLop;
         public static views.formMonHoc frmMH;
         public static views.formLTC frmLTC;
-        //public static views.frmNhapDiem frmNhapDiem;
+        public static views.formNhapDiem frmNhapDiem;
+
+        public static views.formDKLTC frmDKLTC;
+        public static views.formXemDiem frmXemDiem;
+        public static views.formHocPhi frmHocPhi;
 
         /* public static formClassRegistration frmRegister;
          public static formScores frmScores;
@@ -148,7 +152,8 @@ namespace QLDSV_TC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new views.formLogin());
+            Program.frmChinh = new formMain();
+            Application.Run(Program.frmChinh);
         }
     }
 }

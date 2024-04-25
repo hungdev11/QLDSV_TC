@@ -37,12 +37,20 @@ namespace QLDSV_TC
             this.btnNhapDiem = new DevExpress.XtraBars.BarButtonItem();
             this.btnDKLTC = new DevExpress.XtraBars.BarButtonItem();
             this.btnXemDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogin = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCreatAcc = new DevExpress.XtraBars.BarButtonItem();
+            this.btnExit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgQuanLyKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.rpgBaoCaoKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbpQuanLyKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbpHocPhi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbpBaoCaoKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbpSV = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
@@ -62,16 +70,22 @@ namespace QLDSV_TC
             this.btnLTC,
             this.btnNhapDiem,
             this.btnDKLTC,
-            this.btnXemDiem});
+            this.btnXemDiem,
+            this.btnLogin,
+            this.btnLogout,
+            this.btnCreatAcc,
+            this.btnExit,
+            this.btnHocPhi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 660;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageQuanLy,
-            this.ribbonPageBaoCao,
-            this.ribbonPageSinhVien});
+            this.ribbonBaoCao,
+            this.ribbonPageSinhVien,
+            this.ribbonPageHeThong});
             this.ribbonControl1.Size = new System.Drawing.Size(1516, 315);
             // 
             // btnLopHoc
@@ -108,6 +122,7 @@ namespace QLDSV_TC
             this.btnNhapDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapDiem.ImageOptions.Image")));
             this.btnNhapDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhapDiem.ImageOptions.LargeImage")));
             this.btnNhapDiem.Name = "btnNhapDiem";
+            this.btnNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiem_ItemClick);
             // 
             // btnDKLTC
             // 
@@ -115,7 +130,7 @@ namespace QLDSV_TC
             this.btnDKLTC.Id = 5;
             this.btnDKLTC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDKLTC.ImageOptions.SvgImage")));
             this.btnDKLTC.Name = "btnDKLTC";
-            this.btnDKLTC.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnDKLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDKLTC_ItemClick);
             // 
             // btnXemDiem
             // 
@@ -123,50 +138,117 @@ namespace QLDSV_TC
             this.btnXemDiem.Id = 6;
             this.btnXemDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXemDiem.ImageOptions.SvgImage")));
             this.btnXemDiem.Name = "btnXemDiem";
-            this.btnXemDiem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXemDiem_ItemClick);
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Caption = "Đăng Nhập";
+            this.btnLogin.Id = 7;
+            this.btnLogin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.Image")));
+            this.btnLogin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.ImageOptions.LargeImage")));
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogin_ItemClick);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Caption = "Đăng Xuất";
+            this.btnLogout.Id = 8;
+            this.btnLogout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.ImageOptions.Image")));
+            this.btnLogout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.ImageOptions.LargeImage")));
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
+            // 
+            // btnCreatAcc
+            // 
+            this.btnCreatAcc.Caption = "Tạo Tài Khoản";
+            this.btnCreatAcc.Id = 9;
+            this.btnCreatAcc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCreatAcc.ImageOptions.Image")));
+            this.btnCreatAcc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCreatAcc.ImageOptions.LargeImage")));
+            this.btnCreatAcc.Name = "btnCreatAcc";
+            this.btnCreatAcc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCreatAcc_ItemClick);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Caption = "Thoát";
+            this.btnExit.Id = 10;
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
+            this.btnExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.LargeImage")));
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
+            // 
+            // btnHocPhi
+            // 
+            this.btnHocPhi.Caption = "Học Phí";
+            this.btnHocPhi.Id = 11;
+            this.btnHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHocPhi.ImageOptions.Image")));
+            this.btnHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHocPhi.ImageOptions.LargeImage")));
+            this.btnHocPhi.Name = "btnHocPhi";
+            this.btnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHocPhi_ItemClick);
             // 
             // ribbonPageQuanLy
             // 
             this.ribbonPageQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgQuanLyKhoa});
+            this.rbpQuanLyKhoa,
+            this.rbpHocPhi});
             this.ribbonPageQuanLy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageQuanLy.ImageOptions.Image")));
             this.ribbonPageQuanLy.Name = "ribbonPageQuanLy";
             this.ribbonPageQuanLy.Text = "Quản Lý";
             // 
-            // rpgQuanLyKhoa
+            // rbpQuanLyKhoa
             // 
-            this.rpgQuanLyKhoa.ItemLinks.Add(this.btnLopHoc);
-            this.rpgQuanLyKhoa.ItemLinks.Add(this.btnMonHoc);
-            this.rpgQuanLyKhoa.ItemLinks.Add(this.btnLTC);
-            this.rpgQuanLyKhoa.ItemLinks.Add(this.btnNhapDiem);
-            this.rpgQuanLyKhoa.Name = "rpgQuanLyKhoa";
+            this.rbpQuanLyKhoa.ItemLinks.Add(this.btnLopHoc);
+            this.rbpQuanLyKhoa.ItemLinks.Add(this.btnMonHoc);
+            this.rbpQuanLyKhoa.ItemLinks.Add(this.btnLTC);
+            this.rbpQuanLyKhoa.ItemLinks.Add(this.btnNhapDiem);
+            this.rbpQuanLyKhoa.Name = "rbpQuanLyKhoa";
             // 
-            // ribbonPageBaoCao
+            // rbpHocPhi
             // 
-            this.ribbonPageBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rpgBaoCaoKhoa});
-            this.ribbonPageBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageBaoCao.ImageOptions.Image")));
-            this.ribbonPageBaoCao.Name = "ribbonPageBaoCao";
-            this.ribbonPageBaoCao.Text = "Báo Cáo";
+            this.rbpHocPhi.ItemLinks.Add(this.btnHocPhi);
+            this.rbpHocPhi.Name = "rbpHocPhi";
             // 
-            // rpgBaoCaoKhoa
+            // ribbonBaoCao
             // 
-            this.rpgBaoCaoKhoa.Name = "rpgBaoCaoKhoa";
-            this.rpgBaoCaoKhoa.Text = "ribbonPageGroup1";
+            this.ribbonBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbpBaoCaoKhoa});
+            this.ribbonBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonBaoCao.ImageOptions.Image")));
+            this.ribbonBaoCao.Name = "ribbonBaoCao";
+            this.ribbonBaoCao.Text = "Báo Cáo";
+            // 
+            // rbpBaoCaoKhoa
+            // 
+            this.rbpBaoCaoKhoa.Name = "rbpBaoCaoKhoa";
+            this.rbpBaoCaoKhoa.Text = "ribbonPageGroup1";
             // 
             // ribbonPageSinhVien
             // 
             this.ribbonPageSinhVien.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.rbpSV});
             this.ribbonPageSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageSinhVien.ImageOptions.Image")));
             this.ribbonPageSinhVien.Name = "ribbonPageSinhVien";
             this.ribbonPageSinhVien.Text = "Sinh Viên";
             // 
-            // ribbonPageGroup1
+            // rbpSV
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnDKLTC);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnXemDiem);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.rbpSV.ItemLinks.Add(this.btnDKLTC);
+            this.rbpSV.ItemLinks.Add(this.btnXemDiem);
+            this.rbpSV.Name = "rbpSV";
+            // 
+            // ribbonPageHeThong
+            // 
+            this.ribbonPageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rbpHeThong});
+            this.ribbonPageHeThong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageHeThong.ImageOptions.Image")));
+            this.ribbonPageHeThong.Name = "ribbonPageHeThong";
+            this.ribbonPageHeThong.Text = "Hệ Thống";
+            // 
+            // rbpHeThong
+            // 
+            this.rbpHeThong.ItemLinks.Add(this.btnLogin);
+            this.rbpHeThong.ItemLinks.Add(this.btnLogout);
+            this.rbpHeThong.ItemLinks.Add(this.btnCreatAcc);
+            this.rbpHeThong.ItemLinks.Add(this.btnExit);
+            this.rbpHeThong.Name = "rbpHeThong";
             // 
             // statusStrip1
             // 
@@ -211,6 +293,7 @@ namespace QLDSV_TC
             this.Ribbon = this.ribbonControl1;
             this.Text = "Trang Chủ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.formMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -222,22 +305,30 @@ namespace QLDSV_TC
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageBaoCao;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgBaoCaoKhoa;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonBaoCao;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpBaoCaoKhoa;
         private System.Windows.Forms.StatusStrip statusStrip1;
         public  System.Windows.Forms.ToolStripStatusLabel statusMa;
         public System.Windows.Forms.ToolStripStatusLabel statusTen;
         public System.Windows.Forms.ToolStripStatusLabel statusNhom;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageQuanLy;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgQuanLyKhoa;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpQuanLyKhoa;
         private DevExpress.XtraBars.BarButtonItem btnLopHoc;
         private DevExpress.XtraBars.BarButtonItem btnMonHoc;
         private DevExpress.XtraBars.BarButtonItem btnLTC;
         private DevExpress.XtraBars.BarButtonItem btnNhapDiem;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageSinhVien;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpSV;
         private DevExpress.XtraBars.BarButtonItem btnDKLTC;
         private DevExpress.XtraBars.BarButtonItem btnXemDiem;
+        private DevExpress.XtraBars.BarButtonItem btnLogin;
+        private DevExpress.XtraBars.BarButtonItem btnLogout;
+        private DevExpress.XtraBars.BarButtonItem btnCreatAcc;
+        private DevExpress.XtraBars.BarButtonItem btnExit;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHeThong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpHeThong;
+        private DevExpress.XtraBars.BarButtonItem btnHocPhi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpHocPhi;
     }
 }
 
