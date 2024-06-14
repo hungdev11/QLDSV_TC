@@ -42,11 +42,14 @@ namespace QLDSV_TC
             this.btnCreatAcc = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDiemTK = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpQuanLyKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpHocPhi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpBaoCaoKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbpBaoCaoPKT = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpSV = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -55,13 +58,14 @@ namespace QLDSV_TC
             this.statusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusNhom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnRpHocPhi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(60, 58, 60, 58);
+            this.ribbonControl1.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(240, 231, 240, 231);
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -75,18 +79,20 @@ namespace QLDSV_TC
             this.btnLogout,
             this.btnCreatAcc,
             this.btnExit,
-            this.btnHocPhi});
+            this.btnHocPhi,
+            this.btnDSHocPhi,
+            this.btnDiemTK});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(24, 25, 24, 25);
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 660;
+            this.ribbonControl1.OptionsMenuMinWidth = 2640;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageQuanLy,
             this.ribbonBaoCao,
             this.ribbonPageSinhVien,
             this.ribbonPageHeThong});
-            this.ribbonControl1.Size = new System.Drawing.Size(1516, 315);
+            this.ribbonControl1.Size = new System.Drawing.Size(2815, 315);
             // 
             // btnLopHoc
             // 
@@ -185,6 +191,24 @@ namespace QLDSV_TC
             this.btnHocPhi.Name = "btnHocPhi";
             this.btnHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHocPhi_ItemClick);
             // 
+            // btnDSHocPhi
+            // 
+            this.btnDSHocPhi.Caption = "Học Phí";
+            this.btnDSHocPhi.Id = 14;
+            this.btnDSHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDSHocPhi.ImageOptions.Image")));
+            this.btnDSHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSHocPhi.ImageOptions.LargeImage")));
+            this.btnDSHocPhi.Name = "btnDSHocPhi";
+            this.btnDSHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSHocPhi_ItemClick);
+            // 
+            // btnDiemTK
+            // 
+            this.btnDiemTK.Caption = "Điểm tổng kết";
+            this.btnDiemTK.Id = 15;
+            this.btnDiemTK.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDiemTK.ImageOptions.Image")));
+            this.btnDiemTK.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDiemTK.ImageOptions.LargeImage")));
+            this.btnDiemTK.Name = "btnDiemTK";
+            this.btnDiemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDiemTK_ItemClick);
+            // 
             // ribbonPageQuanLy
             // 
             this.ribbonPageQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -210,15 +234,21 @@ namespace QLDSV_TC
             // ribbonBaoCao
             // 
             this.ribbonBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.rbpBaoCaoKhoa});
+            this.rbpBaoCaoKhoa,
+            this.rbpBaoCaoPKT});
             this.ribbonBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonBaoCao.ImageOptions.Image")));
             this.ribbonBaoCao.Name = "ribbonBaoCao";
             this.ribbonBaoCao.Text = "Báo Cáo";
             // 
             // rbpBaoCaoKhoa
             // 
+            this.rbpBaoCaoKhoa.ItemLinks.Add(this.btnDiemTK);
             this.rbpBaoCaoKhoa.Name = "rbpBaoCaoKhoa";
-            this.rbpBaoCaoKhoa.Text = "ribbonPageGroup1";
+            // 
+            // rbpBaoCaoPKT
+            // 
+            this.rbpBaoCaoPKT.ItemLinks.Add(this.btnDSHocPhi);
+            this.rbpBaoCaoPKT.Name = "rbpBaoCaoPKT";
             // 
             // ribbonPageSinhVien
             // 
@@ -257,9 +287,10 @@ namespace QLDSV_TC
             this.statusMa,
             this.statusTen,
             this.statusNhom});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1249);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1392);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1516, 42);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 14, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(2815, 42);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -281,14 +312,22 @@ namespace QLDSV_TC
             this.statusNhom.Size = new System.Drawing.Size(82, 32);
             this.statusNhom.Text = "Nhóm";
             // 
+            // btnRpHocPhi
+            // 
+            this.btnRpHocPhi.Caption = "Học phí";
+            this.btnRpHocPhi.Id = 13;
+            this.btnRpHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRpHocPhi.ImageOptions.Image")));
+            this.btnRpHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRpHocPhi.ImageOptions.LargeImage")));
+            this.btnRpHocPhi.Name = "btnRpHocPhi";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1516, 1291);
+            this.ClientSize = new System.Drawing.Size(2815, 1434);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "formMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Trang Chủ";
@@ -329,6 +368,10 @@ namespace QLDSV_TC
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpHeThong;
         private DevExpress.XtraBars.BarButtonItem btnHocPhi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpHocPhi;
+        private DevExpress.XtraBars.BarButtonItem btnDSHocPhi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpBaoCaoPKT;
+        private DevExpress.XtraBars.BarButtonItem btnRpHocPhi;
+        private DevExpress.XtraBars.BarButtonItem btnDiemTK;
     }
 }
 

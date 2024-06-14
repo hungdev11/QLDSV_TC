@@ -54,5 +54,10 @@ namespace QLDSV_TC.views
             taiThongTinSV();
             taiBangDiem();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            taiBangDiem();
+        }
     }
 }

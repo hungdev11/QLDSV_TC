@@ -87,8 +87,11 @@ E:\QLDSV_TC\QLDSV_TC\bin\Debug\DevExpress.XtraCharts.v23.2.Wizard.xml
 E:\QLDSV_TC\QLDSV_TC\bin\Debug\DevExpress.XtraPivotGrid.v23.2.xml
 E:\QLDSV_TC\QLDSV_TC\bin\Debug\DevExpress.XtraDiagram.v23.2.xml
 E:\QLDSV_TC\QLDSV_TC\bin\Debug\DevExpress.Diagram.v23.2.Core.xml
-E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.reportDSLTC.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formTaoTK.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formDKLTC.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formXemDiem.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formHocPhi.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtraReport1.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formDSHocPhi.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrDiemTongKetKhoaHoc.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formTongKetDiem.resources

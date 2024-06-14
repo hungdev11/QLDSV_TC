@@ -298,7 +298,7 @@ namespace QLDSV_TC.views
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1998);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 1559);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1535, 0);
             // 
@@ -308,7 +308,7 @@ namespace QLDSV_TC.views
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 46);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1952);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 1513);
             // 
             // barDockControlRight
             // 
@@ -316,7 +316,7 @@ namespace QLDSV_TC.views
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1535, 46);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 1952);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 1513);
             // 
             // panelChonKhoa
             // 
@@ -397,7 +397,7 @@ namespace QLDSV_TC.views
             this.infoLTC.Controls.Add(this.txtMaKhoa);
             this.infoLTC.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.infoLTC.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoLTC.Location = new System.Drawing.Point(0, 1559);
+            this.infoLTC.Location = new System.Drawing.Point(0, 1120);
             this.infoLTC.Name = "infoLTC";
             this.infoLTC.Size = new System.Drawing.Size(1535, 439);
             this.infoLTC.TabIndex = 14;
@@ -568,7 +568,7 @@ namespace QLDSV_TC.views
             this.gcLTC.MainView = this.gvLTC;
             this.gcLTC.MenuManager = this.barManager1;
             this.gcLTC.Name = "gcLTC";
-            this.gcLTC.Size = new System.Drawing.Size(1535, 1460);
+            this.gcLTC.Size = new System.Drawing.Size(1535, 1021);
             this.gcLTC.TabIndex = 19;
             this.gcLTC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLTC});
@@ -700,7 +700,7 @@ namespace QLDSV_TC.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1535, 1998);
+            this.ClientSize = new System.Drawing.Size(1535, 1559);
             this.Controls.Add(this.gcLTC);
             this.Controls.Add(this.infoLTC);
             this.Controls.Add(this.panelChonKhoa);

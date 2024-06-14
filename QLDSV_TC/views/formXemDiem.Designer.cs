@@ -46,6 +46,7 @@ namespace QLDSV_TC.views
             this.diemCK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.diemTK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupTTSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenSV.Properties)).BeginInit();
@@ -56,6 +57,7 @@ namespace QLDSV_TC.views
             // 
             // groupTTSV
             // 
+            this.groupTTSV.Controls.Add(this.btnRefresh);
             this.groupTTSV.Controls.Add(this.label3);
             this.groupTTSV.Controls.Add(this.txtMaLop);
             this.groupTTSV.Controls.Add(this.label2);
@@ -214,13 +216,13 @@ namespace QLDSV_TC.views
             this.diemTK.OptionsColumn.AllowEdit = false;
             this.diemTK.OptionsColumn.AllowFocus = false;
             this.diemTK.OptionsColumn.ReadOnly = true;
-            this.diemTK.Visible = true;
-            this.diemTK.VisibleIndex = 5;
-            this.diemTK.Width = 150;
             this.diemTK.UnboundDataType = typeof(string);
             this.diemTK.UnboundExpression = "Round(Iif(IsNullOrEmpty([DIEM_CC]), 0, [DIEM_CC]) * 0.1 + Iif(IsNullOrEmpty([DIEM" +
     "_GK]), 0, [DIEM_GK]) * 0.3 + Iif(IsNullOrEmpty([DIEM_CK]), 0, [DIEM_CK]) * 0.6, " +
     "1)";
+            this.diemTK.Visible = true;
+            this.diemTK.VisibleIndex = 5;
+            this.diemTK.Width = 150;
             // 
             // gridColumn1
             // 
@@ -230,6 +232,16 @@ namespace QLDSV_TC.views
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 6;
             this.gridColumn1.Width = 150;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(182, 117);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(176, 114);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // formXemDiem
             // 
@@ -272,5 +284,6 @@ namespace QLDSV_TC.views
         private DevExpress.XtraGrid.Columns.GridColumn diemCK;
         private DevExpress.XtraGrid.Columns.GridColumn diemTK;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

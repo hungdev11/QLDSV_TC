@@ -26,15 +26,7 @@ namespace QLDSV_TC.views
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            String query = "EXEC SP_DSLTC '" + cmbNienKhoa.Text + "'," + spinHK.Text.Substring(0, 1);
-            dtDSLTC = Program.ExecSqlDataTable(query);
-            if (dtDSLTC != null)
-                gcDSLTC.DataSource = dtDSLTC;
-
-            String query2 = "EXEC [SP_DSLTCSVDaDangky] '" + txtMaSV.Text + "','"+ cmbNienKhoa.Text + "'," + spinHK.Text.Substring(0, 1);
-            dtDSLTCDaDangKy = Program.ExecSqlDataTable(query2);
-            if (dtDSLTCDaDangKy != null)
-                gcLTCDaDK.DataSource = dtDSLTCDaDangKy;
+            taiLaiLTC();
         }
         private void taiThongTinSV()
         {
@@ -114,7 +106,6 @@ namespace QLDSV_TC.views
                 {
                     MessageBox.Show("Đăng kí thành công!");
                     taiLaiLTC();
-
                 }
                 else
                 {
@@ -127,15 +118,17 @@ namespace QLDSV_TC.views
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string cmd = "EXEC [dbo].[SP_LTC_HuyDangKy] " + txtLTC.Text + " , '" + txtMaSV.Text + "' ";
-                if (Program.ExecSqlNonQuery(cmd) == 0)
+                try
                 {
-                    MessageBox.Show("Hủy đăng kí thành công!");
-                    taiLaiLTC();
-                }
-                else
+                    string cmd = "EXEC [dbo].[SP_LTC_HuyDangKy] " + txtLTC.Text + " , '" + txtMaSV.Text + "' ";
+                    if (Program.ExecSqlNonQuery(cmd) == 0)
+                    {
+                        MessageBox.Show("Hủy đăng kí thành công!");
+                        taiLaiLTC();
+                    }
+                }catch(Exception ex)
                 {
-                    MessageBox.Show("Hủy đăng kí thất bại");
+                    MessageBox.Show("Hủy đăng kí thất bại:" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

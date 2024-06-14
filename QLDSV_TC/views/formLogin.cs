@@ -171,8 +171,16 @@ namespace QLDSV_TC.views
         }
         public void loadAgain()
         {
-            comBoxPhongBan.SelectedItem = Program.mGroup;
+
+            if (KetNoi_CSDLGoc() == 0) return;
+            LayDSPM("SELECT * FROM [dbo].[V_DS_PHANMANH]");
+            Program.bdsDSPM.Filter = "";
+            comBoxPhongBan.SelectedIndex = 0;
             Program.servername = comBoxPhongBan.SelectedValue.ToString();
+            txtBMatKhau.Properties.UseSystemPasswordChar = true;
+
+
+            //comBoxPhongBan.SelectedItem = Program.mGroup;
             txtBTaiKhoan.Text = null;
             txtBMatKhau.Text = null;
             txtBTaiKhoan.Focus();

@@ -270,11 +270,13 @@ namespace QLDSV_TC.views
             // 
             this.gcMH.DataSource = this.bdsMonHoc;
             this.gcMH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcMH.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gcMH.Location = new System.Drawing.Point(0, 46);
             this.gcMH.MainView = this.gvMH;
+            this.gcMH.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gcMH.MenuManager = this.barManager1;
             this.gcMH.Name = "gcMH";
-            this.gcMH.Size = new System.Drawing.Size(1535, 517);
+            this.gcMH.Size = new System.Drawing.Size(1535, 1034);
             this.gcMH.TabIndex = 11;
             this.gcMH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvMH});
@@ -286,49 +288,51 @@ namespace QLDSV_TC.views
             this.colTENMH,
             this.colSOTIET_LT,
             this.colSOTIET_TH});
+            this.gvMH.DetailHeight = 700;
             this.gvMH.GridControl = this.gcMH;
             this.gvMH.Name = "gvMH";
             this.gvMH.OptionsBehavior.ReadOnly = true;
+            this.gvMH.OptionsEditForm.PopupEditFormWidth = 1600;
             // 
             // colMAMH
             // 
             this.colMAMH.Caption = "Mã Môn Học";
             this.colMAMH.FieldName = "MAMH";
-            this.colMAMH.MinWidth = 40;
+            this.colMAMH.MinWidth = 80;
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
-            this.colMAMH.Width = 150;
+            this.colMAMH.Width = 300;
             // 
             // colTENMH
             // 
             this.colTENMH.Caption = "Tên Môn Học";
             this.colTENMH.FieldName = "TENMH";
-            this.colTENMH.MinWidth = 40;
+            this.colTENMH.MinWidth = 80;
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
-            this.colTENMH.Width = 150;
+            this.colTENMH.Width = 300;
             // 
             // colSOTIET_LT
             // 
             this.colSOTIET_LT.Caption = "Số Tiết Lý Thuyết";
             this.colSOTIET_LT.FieldName = "SOTIET_LT";
-            this.colSOTIET_LT.MinWidth = 40;
+            this.colSOTIET_LT.MinWidth = 80;
             this.colSOTIET_LT.Name = "colSOTIET_LT";
             this.colSOTIET_LT.Visible = true;
             this.colSOTIET_LT.VisibleIndex = 2;
-            this.colSOTIET_LT.Width = 150;
+            this.colSOTIET_LT.Width = 300;
             // 
             // colSOTIET_TH
             // 
             this.colSOTIET_TH.Caption = "Số Tiết Thực Hành";
             this.colSOTIET_TH.FieldName = "SOTIET_TH";
-            this.colSOTIET_TH.MinWidth = 40;
+            this.colSOTIET_TH.MinWidth = 80;
             this.colSOTIET_TH.Name = "colSOTIET_TH";
             this.colSOTIET_TH.Visible = true;
             this.colSOTIET_TH.VisibleIndex = 3;
-            this.colSOTIET_TH.Width = 150;
+            this.colSOTIET_TH.Width = 300;
             // 
             // infoMH
             // 
@@ -342,9 +346,9 @@ namespace QLDSV_TC.views
             this.infoMH.Controls.Add(this.txtMaMH);
             this.infoMH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.infoMH.Font = new System.Drawing.Font("Times New Roman", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.infoMH.Location = new System.Drawing.Point(0, 563);
+            this.infoMH.Location = new System.Drawing.Point(0, 1080);
             this.infoMH.Name = "infoMH";
-            this.infoMH.Size = new System.Drawing.Size(1535, 284);
+            this.infoMH.Size = new System.Drawing.Size(1535, 0);
             this.infoMH.TabIndex = 12;
             this.infoMH.TabStop = false;
             this.infoMH.Text = "THÔNG TIN MÔN HỌC";

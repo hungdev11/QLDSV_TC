@@ -49,6 +49,10 @@ namespace QLDSV_TC
         public static views.formXemDiem frmXemDiem;
         public static views.formHocPhi frmHocPhi;
 
+        //report
+        public static views.formDSHocPhi frmrpDSHocPhi;
+        public static views.formTongKetDiem frmrpTongKetDiem;
+
         /* public static formClassRegistration frmRegister;
          public static formScores frmScores;
          public static formManagerSubject frmSubject;*/

@@ -91,17 +91,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reports\reportDSLTC.cs">
+    <Compile Include="reports\XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reports\reportDSLTC.Designer.cs">
-      <DependentUpon>reportDSLTC.cs</DependentUpon>
+    <Compile Include="reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\XtrDiemTongKetKhoaHoc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\XtrDiemTongKetKhoaHoc.Designer.cs">
+      <DependentUpon>XtrDiemTongKetKhoaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="views\formDKLTC.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\formDKLTC.Designer.cs">
       <DependentUpon>formDKLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formDSHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formDSHocPhi.Designer.cs">
+      <DependentUpon>formDSHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="views\formHocPhi.cs">
       <SubType>Form</SubType>
@@ -145,6 +158,12 @@
     <Compile Include="views\formTaoTK.Designer.cs">
       <DependentUpon>formTaoTK.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\formTongKetDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formTongKetDiem.Designer.cs">
+      <DependentUpon>formTongKetDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\formXemDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,11 +183,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reports\reportDSLTC.resx">
-      <DependentUpon>reportDSLTC.cs</DependentUpon>
+    <EmbeddedResource Include="reports\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\XtrDiemTongKetKhoaHoc.resx">
+      <DependentUpon>XtrDiemTongKetKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formDKLTC.resx">
       <DependentUpon>formDKLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formDSHocPhi.resx">
+      <DependentUpon>formDSHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formHocPhi.resx">
       <DependentUpon>formHocPhi.cs</DependentUpon>
@@ -190,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\formTaoTK.resx">
       <DependentUpon>formTaoTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formTongKetDiem.resx">
+      <DependentUpon>formTongKetDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formXemDiem.resx">
       <DependentUpon>formXemDiem.cs</DependentUpon>

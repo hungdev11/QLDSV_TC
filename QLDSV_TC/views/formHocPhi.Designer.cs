@@ -463,6 +463,11 @@ namespace QLDSV_TC.views
             0,
             0,
             0});
+            this.hocPhi.Properties.MaxValue = new decimal(new int[] {
+            50000000,
+            0,
+            0,
+            0});
             this.hocPhi.Size = new System.Drawing.Size(234, 48);
             this.hocPhi.TabIndex = 20;
             // 

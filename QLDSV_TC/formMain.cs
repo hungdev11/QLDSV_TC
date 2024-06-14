@@ -41,6 +41,8 @@ namespace QLDSV_TC
                 rbpQuanLyKhoa.Visible = true;
                 rbpBaoCaoKhoa.Visible = true;
                 rbpSV.Visible = false;
+                rbpBaoCaoPKT.Visible = false;
+
 
                 rbpHocPhi.Visible = false;
 
@@ -55,6 +57,7 @@ namespace QLDSV_TC
                 rbpQuanLyKhoa.Visible = false;
                 rbpBaoCaoKhoa.Visible = false;
                 rbpHocPhi.Visible = false;
+                rbpBaoCaoPKT.Visible = false;
 
                 rbpSV.Visible = true;
 
@@ -67,8 +70,10 @@ namespace QLDSV_TC
                 ribbonPageQuanLy.Visible = true;
                 ribbonPageSinhVien.Visible = false;
                 ribbonBaoCao.Visible = true;
+                rbpBaoCaoPKT.Visible = true;
 
-                rbpBaoCaoKhoa.Visible = true;
+
+                rbpBaoCaoKhoa.Visible = false;
                 rbpSV.Visible = false;
 
                 rbpQuanLyKhoa.Visible = false;
@@ -145,7 +150,6 @@ namespace QLDSV_TC
         private void btnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Program.conn.Close();
-            Program.frmLogin.Show();
 
             if (Program.frmLop != null)
             {
@@ -171,7 +175,21 @@ namespace QLDSV_TC
             {
                 Program.frmXemDiem.Close();
             }
+            if (Program.frmHocPhi != null)
+            {
+                Program.frmHocPhi.Close();
+            }
+            if (Program.frmrpDSHocPhi != null)
+            {
+                Program.frmrpDSHocPhi.Close();
+            }
+            if (Program.frmrpTongKetDiem != null)
+            {
+                Program.frmrpTongKetDiem.Close();
+            }
             Program.mloginDN = Program.passDN = Program.mGroup = "";
+            Program.frmLogin.loadAgain();
+            Program.frmLogin.Show();
             beforeLogin();
         }
 
@@ -203,7 +221,6 @@ namespace QLDSV_TC
             if (frm != null) frm.Activate();
             else
             {
-                new views.formDKLTC().Show();
                 Program.frmDKLTC = new views.formDKLTC();
                 Program.frmDKLTC.MdiParent = this;
                 Program.frmDKLTC.Show();
@@ -216,7 +233,6 @@ namespace QLDSV_TC
             if (frm != null) frm.Activate();
             else
             {
-                new views.formDKLTC().Show();
                 Program.frmXemDiem = new views.formXemDiem();
                 Program.frmXemDiem.MdiParent = this;
                 Program.frmXemDiem.Show();
@@ -229,10 +245,32 @@ namespace QLDSV_TC
             if (frm != null) frm.Activate();
             else
             {
-                new views.formHocPhi().Show();
                 Program.frmHocPhi = new views.formHocPhi();
                 Program.frmHocPhi.MdiParent = this;
                 Program.frmHocPhi.Show();
+            }
+        }
+        private void btnDSHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.formDSHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmrpDSHocPhi = new views.formDSHocPhi();
+                Program.frmrpDSHocPhi.MdiParent = this;
+                Program.frmrpDSHocPhi.Show();
+            }
+        }
+
+        private void btnDiemTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.formTongKetDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmrpTongKetDiem = new views.formTongKetDiem();
+                Program.frmrpTongKetDiem.MdiParent = this;
+                Program.frmrpTongKetDiem.Show();
             }
         }
     }

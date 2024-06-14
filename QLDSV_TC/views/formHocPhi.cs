@@ -27,12 +27,19 @@ namespace QLDSV_TC.views
         {
 
         }
-
+        private void fillInfo()
+        {
+            nienKhoa.Text = " ";
+            hocKy.Value = 1;
+            hocPhi.Value = 0;
+            daDong.Value = 0;
+        }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            flagMode = "add";
+            flagMode = "ADD";
             viTriHP = bdsHocPhi.Position;
             bdsHocPhi.AddNew();
+            fillInfo();
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             SVIF.Enabled = true;
@@ -43,12 +50,48 @@ namespace QLDSV_TC.views
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            viTriHP = bdsHocPhi.Position;
+            flagMode = "EDIT";
+
+            SVIF.Enabled = true;
+            nienKhoa.Enabled = hocKy.Enabled = true;
+            traCuu.Enabled = false;
+            gcCTHP.Enabled = gcHocPhi.Enabled = false;
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
+            btnGhi.Enabled = btnPhucHoi.Enabled = true;
 
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa thông tin học phí này ko?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {  
+                try
+                {
+                    String nienkhoa = nienKhoa.Text.Trim();
+                    int hocky = (int)hocKy.Value;
+                    int hocphi = (int)hocPhi.Value;
+                    string cmd = "EXEC [dbo].[SP_XoaHocPhi] '" + maSV + "' , '" + nienkhoa + "' , " + hocky + "";
+                    if (Program.ExecSqlNonQuery(cmd) != 0)
+                        return;
 
+                    this.sP_TaiHocPhiTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sP_TaiHocPhiTableAdapter.Fill(this.dS_HP.SP_TaiHocPhi, maSV);
+
+                    gcHocPhi.Enabled = gcCTHP.Enabled = true;
+                    traCuu.Enabled = true;
+                    btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+                    btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                    SVIF.Enabled = false;
+                    MessageBox.Show("Xóa thành công!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa Học Phí, bạn hãy xóa lại" + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }
+            }
         }
 
         private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -74,10 +117,64 @@ namespace QLDSV_TC.views
             bdsHocPhi.Position = viTriHP;
             taiCTDongHocPhi();
         }
-
+        private bool checkHocPhiInput()
+        {
+            if (nienKhoa.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Niên khóa không được để trống", "", MessageBoxButtons.OK);
+                nienKhoa.Focus();
+                return false;
+            }
+            else if (hocKy.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Học kỳ không được để trống", "", MessageBoxButtons.OK);
+                hocKy.Focus();
+                return false;
+            }
+            else if (hocPhi.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Học phí không được để trống", "", MessageBoxButtons.OK);
+                hocPhi.Focus();
+                return false;
+            }
+            return true;
+        }
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (checkHocPhiInput())
+            {
+                String nienkhoa = nienKhoa.Text.Trim();
+                int hocky = (int)hocKy.Value;
+                int hocphi = (int)hocPhi.Value;
+                string cmd = null;
+                if (flagMode.Equals("ADD"))
+                    cmd = "EXEC [dbo].[SP_ThemHocPhi] '" + maSV + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
+                else
+                    cmd = "EXEC [dbo].[SP_SuaHocPhi] '" + maSV + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
+                try
+                {
+                    if (Program.ExecSqlNonQuery(cmd) != 0)
+                        return;
 
+                    this.sP_TaiHocPhiTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.sP_TaiHocPhiTableAdapter.Fill(this.dS_HP.SP_TaiHocPhi, maSV);
+                    taiCTDongHocPhi();
+
+
+                    gcHocPhi.Enabled = gcCTHP.Enabled = true;
+                    traCuu.Enabled = true;
+                    btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+                    btnGhi.Enabled = btnPhucHoi.Enabled = false;
+                    SVIF.Enabled = false;
+                    MessageBox.Show("Học Phí đã được cập nhật thành công!");
+                }
+                catch (Exception ex)
+                {
+                    //modeFlag = modeFlag.Substring(1);
+                    MessageBox.Show("Lỗi ghi học phí: " + ex.Message, "", MessageBoxButtons.OK);
+                    return;
+                }       
+            }
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -120,7 +217,6 @@ namespace QLDSV_TC.views
                 taiThongTinSV();
                 maSV = traCuuSV.Text.Trim();
                 this.sP_TaiHocPhiTableAdapter.Connection.ConnectionString = Program.connstr;
-                MessageBox.Show(Program.connstr);
                 this.sP_TaiHocPhiTableAdapter.Fill(this.dS_HP.SP_TaiHocPhi, maSV);
                 gcHocPhi.DataSource = bdsHocPhi;
                 btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;

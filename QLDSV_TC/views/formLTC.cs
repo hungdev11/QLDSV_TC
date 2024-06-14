@@ -77,14 +77,17 @@ namespace QLDSV_TC.views
                 Program.mlogin = Program.mloginDN;
                 Program.pass = Program.passDN;
             }
-            if (Program.KetNoi() == 0)
+            if (!(Program.mloginDN.Equals("") && Program.passDN.Equals("") && Program.mGroup.Equals("")))
             {
-                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
-            }
-            else
-            {
-                this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
-                this.lOPTINCHITableAdapter.Fill(this.dS_SV.LOPTINCHI);
+                if (Program.KetNoi() == 0)
+                {
+                    MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.lOPTINCHITableAdapter.Fill(this.dS_SV.LOPTINCHI);
+                }
             }
             if (bdsLTC.Count == 0)
                 btnXoa.Enabled = btnSua.Enabled = false;
