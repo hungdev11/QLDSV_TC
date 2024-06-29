@@ -47,8 +47,8 @@ namespace QLDSV_TC.views
 
         private void btnTaoTK_Click(object sender, EventArgs e)
         {
-            txtMK.Text = "1234";
-            txtMK2.Text = "1234";
+            //txtMK.Text = "1234";
+            //txtMK2.Text = "1234";
             if (txtTK.Text == "")
             {
                 MessageBox.Show("Tên đăng nhập không được để trống!", "Thông Báo", MessageBoxButtons.OK);

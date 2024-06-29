@@ -73,7 +73,7 @@ namespace QLDSV_TC.views
             maLTC = int.Parse(dtDSLTCDaDangKy.Rows[e.RowHandle][0].ToString());
             txtLTC.Text = maLTC.ToString();
             txtMH.Text = dtDSLTCDaDangKy.Rows[e.RowHandle]["tenMH"].ToString();
-            txtGV.Text = dtDSLTCDaDangKy.Rows[e.RowHandle]["tenGV"].ToString();
+            txtGV.Text = dtDSLTCDaDangKy.Rows[e.RowHandle]["TENGV"].ToString();
 
         }
         private void gvLTC_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -83,7 +83,7 @@ namespace QLDSV_TC.views
             maLTC = int.Parse(dtDSLTC.Rows[e.RowHandle][0].ToString());
             txtLTC.Text = maLTC.ToString();
             txtMH.Text = dtDSLTC.Rows[e.RowHandle]["tenMH"].ToString();
-            txtGV.Text = dtDSLTC.Rows[e.RowHandle]["tenGV"].ToString();
+            txtGV.Text = dtDSLTC.Rows[e.RowHandle]["TENGV"].ToString();
         }
         private void taiLaiLTC()
         {
@@ -126,7 +126,8 @@ namespace QLDSV_TC.views
                         MessageBox.Show("Hủy đăng kí thành công!");
                         taiLaiLTC();
                     }
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Hủy đăng kí thất bại:" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

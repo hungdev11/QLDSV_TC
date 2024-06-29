@@ -97,13 +97,43 @@
     <Compile Include="reports\XtraReport1.Designer.cs">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\XtrBangDiemLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\XtrBangDiemLTC.Designer.cs">
+      <DependentUpon>XtrBangDiemLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="reports\XtrDiemTongKetKhoaHoc.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="reports\XtrDiemTongKetKhoaHoc.Designer.cs">
       <DependentUpon>XtrDiemTongKetKhoaHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\XtrDSDKLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\XtrDSDKLTC.Designer.cs">
+      <DependentUpon>XtrDSDKLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\XtrDSLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\XtrDSLTC.Designer.cs">
+      <DependentUpon>XtrDSLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\XtrPhieuDiem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\XtrPhieuDiem.Designer.cs">
+      <DependentUpon>XtrPhieuDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="views\formBangDiemLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formBangDiemLTC.Designer.cs">
+      <DependentUpon>formBangDiemLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\formDKLTC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +182,24 @@
     <Compile Include="views\formNhapDiem.Designer.cs">
       <DependentUpon>formNhapDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\formPhieuDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formPhieuDiem.Designer.cs">
+      <DependentUpon>formPhieuDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formRPDSLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formRPDSLTC.Designer.cs">
+      <DependentUpon>formRPDSLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\formRP_LTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\formRP_LTC.Designer.cs">
+      <DependentUpon>formRP_LTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\formTaoTK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,8 +234,23 @@
     <EmbeddedResource Include="reports\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\XtrBangDiemLTC.resx">
+      <DependentUpon>XtrBangDiemLTC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reports\XtrDiemTongKetKhoaHoc.resx">
       <DependentUpon>XtrDiemTongKetKhoaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\XtrDSDKLTC.resx">
+      <DependentUpon>XtrDSDKLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\XtrDSLTC.resx">
+      <DependentUpon>XtrDSLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\XtrPhieuDiem.resx">
+      <DependentUpon>XtrPhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formBangDiemLTC.resx">
+      <DependentUpon>formBangDiemLTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formDKLTC.resx">
       <DependentUpon>formDKLTC.cs</DependentUpon>
@@ -212,6 +275,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\formNhapDiem.resx">
       <DependentUpon>formNhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formPhieuDiem.resx">
+      <DependentUpon>formPhieuDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formRPDSLTC.resx">
+      <DependentUpon>formRPDSLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\formRP_LTC.resx">
+      <DependentUpon>formRP_LTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\formTaoTK.resx">
       <DependentUpon>formTaoTK.cs</DependentUpon>

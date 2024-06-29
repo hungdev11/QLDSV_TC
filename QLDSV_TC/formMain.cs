@@ -187,6 +187,19 @@ namespace QLDSV_TC
             {
                 Program.frmrpTongKetDiem.Close();
             }
+            if (Program.frmBangDiemLTC != null)
+            {
+                Program.frmBangDiemLTC.Close();
+            }
+            if (Program.frmRPDSLTC != null)
+            {
+                Program.frmRPDSLTC.Close();
+            }
+            if (Program.frmPhieuDiem != null)
+            {
+                Program.frmPhieuDiem.Close();
+            }
+            
             Program.mloginDN = Program.passDN = Program.mGroup = "";
             Program.frmLogin.loadAgain();
             Program.frmLogin.Show();
@@ -271,6 +284,55 @@ namespace QLDSV_TC
                 Program.frmrpTongKetDiem = new views.formTongKetDiem();
                 Program.frmrpTongKetDiem.MdiParent = this;
                 Program.frmrpTongKetDiem.Show();
+            }
+        }
+
+        private void btnBangDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.formBangDiemLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmBangDiemLTC = new views.formBangDiemLTC();
+                Program.frmBangDiemLTC.MdiParent = this;
+                Program.frmBangDiemLTC.Show();
+            }
+        }
+
+        private void btnDSLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.formRPDSLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmRPDSLTC = new views.formRPDSLTC();
+                Program.frmRPDSLTC.MdiParent = this;
+                Program.frmRPDSLTC.Show();
+            }
+        }
+
+        private void btnRP_DSSV_LTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.formRP_LTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmRP_DSSV_DKLTC = new views.formRP_LTC();
+                Program.frmRP_DSSV_DKLTC.MdiParent = this;
+                Program.frmRP_DSSV_DKLTC.Show();
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+            Form frm = CheckExists(typeof(views.formPhieuDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmPhieuDiem = new views.formPhieuDiem();
+                Program.frmPhieuDiem.MdiParent = this;
+                Program.frmPhieuDiem.Show();
             }
         }
     }

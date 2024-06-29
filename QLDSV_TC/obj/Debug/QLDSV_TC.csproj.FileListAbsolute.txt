@@ -95,3 +95,11 @@ E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtraReport1.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formDSHocPhi.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrDiemTongKetKhoaHoc.resources
 E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formTongKetDiem.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrBangDiemLTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrDSLTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrDSDKLTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formBangDiemLTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formRPDSLTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formRP_LTC.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.XtrPhieuDiem.resources
+E:\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.formPhieuDiem.resources

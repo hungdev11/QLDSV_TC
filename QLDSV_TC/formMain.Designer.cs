@@ -44,6 +44,9 @@ namespace QLDSV_TC
             this.btnHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnDSHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnDiemTK = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBangDiem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSLTC = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRP_DSSV_LTC = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpQuanLyKhoa = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpHocPhi = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,6 +62,7 @@ namespace QLDSV_TC
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusNhom = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnRpHocPhi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,10 +85,14 @@ namespace QLDSV_TC
             this.btnExit,
             this.btnHocPhi,
             this.btnDSHocPhi,
-            this.btnDiemTK});
+            this.btnDiemTK,
+            this.btnBangDiem,
+            this.btnDSLTC,
+            this.btnRP_DSSV_LTC,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(24, 25, 24, 25);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 2640;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -209,6 +217,33 @@ namespace QLDSV_TC
             this.btnDiemTK.Name = "btnDiemTK";
             this.btnDiemTK.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDiemTK_ItemClick);
             // 
+            // btnBangDiem
+            // 
+            this.btnBangDiem.Caption = "Bảng điểm LTC";
+            this.btnBangDiem.Id = 16;
+            this.btnBangDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBangDiem.ImageOptions.Image")));
+            this.btnBangDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBangDiem.ImageOptions.LargeImage")));
+            this.btnBangDiem.Name = "btnBangDiem";
+            this.btnBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangDiem_ItemClick);
+            // 
+            // btnDSLTC
+            // 
+            this.btnDSLTC.Caption = "Danh Sách LTC";
+            this.btnDSLTC.Id = 17;
+            this.btnDSLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDSLTC.ImageOptions.Image")));
+            this.btnDSLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSLTC.ImageOptions.LargeImage")));
+            this.btnDSLTC.Name = "btnDSLTC";
+            this.btnDSLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSLTC_ItemClick);
+            // 
+            // btnRP_DSSV_LTC
+            // 
+            this.btnRP_DSSV_LTC.Caption = "Danh sách SV LTC";
+            this.btnRP_DSSV_LTC.Id = 18;
+            this.btnRP_DSSV_LTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRP_DSSV_LTC.ImageOptions.Image")));
+            this.btnRP_DSSV_LTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRP_DSSV_LTC.ImageOptions.LargeImage")));
+            this.btnRP_DSSV_LTC.Name = "btnRP_DSSV_LTC";
+            this.btnRP_DSSV_LTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRP_DSSV_LTC_ItemClick);
+            // 
             // ribbonPageQuanLy
             // 
             this.ribbonPageQuanLy.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -243,6 +278,10 @@ namespace QLDSV_TC
             // rbpBaoCaoKhoa
             // 
             this.rbpBaoCaoKhoa.ItemLinks.Add(this.btnDiemTK);
+            this.rbpBaoCaoKhoa.ItemLinks.Add(this.btnBangDiem);
+            this.rbpBaoCaoKhoa.ItemLinks.Add(this.btnDSLTC);
+            this.rbpBaoCaoKhoa.ItemLinks.Add(this.btnRP_DSSV_LTC);
+            this.rbpBaoCaoKhoa.ItemLinks.Add(this.barButtonItem1);
             this.rbpBaoCaoKhoa.Name = "rbpBaoCaoKhoa";
             // 
             // rbpBaoCaoPKT
@@ -320,6 +359,15 @@ namespace QLDSV_TC
             this.btnRpHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRpHocPhi.ImageOptions.LargeImage")));
             this.btnRpHocPhi.Name = "btnRpHocPhi";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Phiếu điểm";
+            this.barButtonItem1.Id = 19;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -372,6 +420,10 @@ namespace QLDSV_TC
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpBaoCaoPKT;
         private DevExpress.XtraBars.BarButtonItem btnRpHocPhi;
         private DevExpress.XtraBars.BarButtonItem btnDiemTK;
+        private DevExpress.XtraBars.BarButtonItem btnBangDiem;
+        private DevExpress.XtraBars.BarButtonItem btnDSLTC;
+        private DevExpress.XtraBars.BarButtonItem btnRP_DSSV_LTC;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 
